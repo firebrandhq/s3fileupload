@@ -1,0 +1,24 @@
+{
+	"name": "firebrandhq/s3fileupload",
+	"description": "Extend the SilverStripe UploadField to allow storing file in Amazone S3",
+	"type": "silverstripe-module",
+	"keywords": ["silverstripe", "UploadField", "AWS", "S3"],
+    "license": "MIT",
+	"authors": [
+		{
+			"name": "Firebrand Limited",
+			"homepage": "http://firebrand.nz",
+			"email": "hello@firebrand.nz",
+			"role": "Developer"
+		}
+	],
+	"require":
+	{
+		"silverstripe/framework": ">=3.1",
+		"composer/installers": "*",
+		"aws/aws-sdk-php": "3.*"
+	},
+	"support": {
+		"issues": "https://github.com/firebrandhq/s3fileupload"
+	}
+}
