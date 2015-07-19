@@ -1,0 +1,5 @@
+S3File:
+  AccessId: 'YourAWSAccessID'
+  Secret: 'YourAWSAccessSecret'
+  Bucket: 'Name-of-your-bucket'
+  Region: 'us-east-1'
