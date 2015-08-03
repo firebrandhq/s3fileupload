@@ -1,5 +1,0 @@
-S3File:
-  AccessId: false
-  Secret: false
-  Bucket: false
-  Region: false
