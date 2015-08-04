@@ -43,9 +43,6 @@
 				<% else %>
 					<b><% _t('UploadField.ATTACHFILE', 'Attach a file') %></b>
 				<% end_if %>
-				<% if $canPreviewFolder %>
-					<small>(<%t UploadField.UPLOADSINTO 'saves into /{path}' path=$FolderName %>)</small>
-				<% end_if %>
 			</label>
 			<% if $canUpload %>
 				<label class="ss-uploadfield-fromcomputer ss-ui-button ui-corner-all" title="<% _t('UploadField.FROMCOMPUTERINFO', 'Upload from your computer') %>" data-icon="drive-upload">
