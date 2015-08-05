@@ -299,4 +299,12 @@ class S3FileUploadField extends UploadField {
 		return S3FileUploadField_ItemHandler::create($this, $itemID);
 	}
 
+	/**
+	 * Gets the foreign class that needs to be created, or 'S3File' as default if there is no relationship, or it cannot be determined.
+	 * @param string $default
+	 */
+	public function getRelationAutosetClass($default = 'S3File') {
+		return parent::getRelationAutosetClass($default);
+	}
+
 }
