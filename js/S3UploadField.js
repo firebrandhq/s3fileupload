@@ -88,10 +88,8 @@
 				this.fileupload($.extend(true,
 					{
 						formData: function(form) {
-							var idVal = $(form).find(':input[name=ID]').val();
 							var data = config.FormData;
-							if(idVal) data.push({name: 'ID', value: idVal});
-
+							
 							return data;
 						},
 						errorMessages: {
