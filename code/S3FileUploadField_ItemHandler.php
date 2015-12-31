@@ -9,13 +9,14 @@
  * @author Maxime Rainville <max@firebrand.nz>
  * @package s3fileupload
  */
-class S3FileUploadField_ItemHandler extends UploadField_ItemHandler {
+class S3FileUploadField_ItemHandler extends UploadField_ItemHandler
+{
 
-	/**
-	 * @return S3File
-	 */
-	public function getItem() {
-		return DataObject::get_by_id('S3File', $this->itemID);
-	}
-
+    /**
+     * @return S3File
+     */
+    public function getItem()
+    {
+        return DataObject::get_by_id('S3File', $this->itemID);
+    }
 }
