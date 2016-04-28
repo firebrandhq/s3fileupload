@@ -8,7 +8,7 @@
  * @author Maxime Rainville <max@firebrand.nz>
  * @package s3fileupload
  */
-class S3File extends DataObject
+class S3File extends File
 {
 
     /**
