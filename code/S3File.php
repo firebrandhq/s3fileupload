@@ -23,7 +23,7 @@ class S3File extends File
         'Key' => 'Varchar(255)', // Filename under which the file is stored in S3
         'ETag' => 'Varchar(255)', // ETag value returned by S3, usually an MD5 Hash
         'LastModified' => 'Datetime', // Date the file was last modified as reported by the browser
-        'Name' => 'Varchar(255)', // Original name at upload
+        'OriginalName' => 'Varchar(255)', // Original name at upload
         'Size' => 'Int', // Site of the file in bytes
         'Type' => 'Varchar(255)' // File type as reported by the browser at upload
     );
@@ -69,7 +69,7 @@ class S3File extends File
         // If no title provided, reformat filename
         if (!$this->Title) {
             // Strip the extension
-            $this->Title = preg_replace('#\.[[:alnum:]]*$#', '', $this->Name);
+            $this->Title = preg_replace('#\.[[:alnum:]]*$#', '', $this->OriginalName);
             // Replace all punctuation with space
             $this->Title =  preg_replace('#[[:punct:]]#', ' ', $this->Title);
             // Remove unecessary spaces
@@ -100,7 +100,7 @@ class S3File extends File
      */
     public function getExtension()
     {
-        return File::get_file_extension($this->getField('Name'));
+        return File::get_file_extension($this->getField('OriginalName'));
     }
 
     /**
@@ -235,5 +235,13 @@ class S3File extends File
     protected function defaultTemplate()
     {
         return array('S3File');
+    }
+
+    public function getName() {
+        $this->getField('OriginalName');
+    }
+
+    public function setName($name) {
+        $this->setField('OriginalName', $name);
     }
 }
