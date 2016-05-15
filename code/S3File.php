@@ -11,6 +11,8 @@
 class S3File extends File
 {
 
+
+
     /**
      * Database property of an S3 File
      * @var array
@@ -27,6 +29,15 @@ class S3File extends File
         'Size' => 'Int', // Site of the file in bytes
         'Type' => 'Varchar(255)' // File type as reported by the browser at upload
     );
+
+
+    public function __construct($record = null, $isSingleton = false, $model = null)
+    {
+        if (is_array($record) && isset($record['Name'])) {
+            $record['OriginalName'] = $record['Name'];
+        }
+        parent::__construct($record, $isSingleton, $model);
+    }
 
     /**
      * Custimize the form fields to edit this S3 File
@@ -238,7 +249,7 @@ class S3File extends File
     }
 
     public function getName() {
-        $this->getField('OriginalName');
+        return $this->getField('OriginalName');
     }
 
     public function setName($name) {
